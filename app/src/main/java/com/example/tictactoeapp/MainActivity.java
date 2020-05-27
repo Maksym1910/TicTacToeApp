@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -23,7 +24,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView textViewPlayer1;
     private TextView textViewPlayer2;
 
-    Button buttonReset;
+    private Button resetGame, resetFields;
+
+    Handler handler = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +35,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         textViewPlayer1 = findViewById(R.id.text_view_player1);
         textViewPlayer2 = findViewById(R.id.text_view_player2);
-        buttonReset = findViewById(R.id.button_reset);
+        resetFields = findViewById(R.id.button_reset_fields);
+        resetGame = findViewById(R.id.button_reset_game);
 
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
@@ -43,10 +47,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }
 
-        buttonReset.setOnClickListener(new View.OnClickListener() {
+        resetFields.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                resetBoard();
+                resetField();
+            }
+        });
+
+        resetGame.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                resetGame();
             }
         });
     }
@@ -128,20 +139,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void player1Wins() {
         player1Points++;
-        Toast.makeText(this, "Player 1 won!", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Player 1 won!", Toast.LENGTH_SHORT).show();
         updatePointsText();
         resetBoard();
     }
 
     private void player2Wins() {
         player2Points++;
-        Toast.makeText(this, "Player 2 won!", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Player 2 won!", Toast.LENGTH_SHORT).show();
         updatePointsText();
         resetBoard();
     }
 
     private void draw() {
-        Toast.makeText(this, "Draw!", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Draw!", Toast.LENGTH_SHORT).show();
         resetBoard();
     }
 
@@ -150,12 +161,35 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         textViewPlayer2.setText("Player 2: " + player2Points);
     }
 
-    private void resetBoard() {
+    private void resetGame() {
+        textViewPlayer1.setText("Player 1: 0");
+        textViewPlayer2.setText("Player 2: 0");
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 buttons[i][j].setText("");
             }
         }
+    }
+
+    private void resetField() {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                buttons[i][j].setText("");
+            }
+        }
+    }
+
+    private void resetBoard() {
+        handler.postDelayed(new Runnable() {
+            public void run() {
+                //Delay in 2 sec
+                for (int i = 0; i < 3; i++) {
+                    for (int j = 0; j < 3; j++) {
+                        buttons[i][j].setText("");
+                    }
+                }
+            }
+        }, 2000);
 
         roundCount = 0;
         player1Turn = true;
