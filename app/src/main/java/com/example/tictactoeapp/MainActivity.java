@@ -180,12 +180,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void resetBoard() {
+
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                buttons[i][j].setEnabled(false);
+            }
+        }
+
         handler.postDelayed(new Runnable() {
             public void run() {
                 //Delay in 2 sec
                 for (int i = 0; i < 3; i++) {
                     for (int j = 0; j < 3; j++) {
                         buttons[i][j].setText("");
+                    }
+                }
+
+                for (int i = 0; i < 3; i++) {
+                    for (int j = 0; j < 3; j++) {
+                        buttons[i][j].setEnabled(true);
                     }
                 }
             }
