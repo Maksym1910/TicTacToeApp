@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -46,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                resetBoard();
             }
         });
     }
@@ -82,7 +81,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String[][] field = new String[3][3];
 
         for (int i = 0; i < 3; i++) {
-            for (int j = 0; i < 3; j++) {
+            for (int j = 0; j < 3; j++) {
                 field[i][j] = buttons[i][j].getText().toString();
             }
         }
@@ -143,5 +142,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void draw() {
         Toast.makeText(this, "Draw!", Toast.LENGTH_LONG).show();
         resetBoard();
+    }
+
+    private void updatePointsText() {
+        textViewPlayer1.setText("Player 1: " + player1Points);
+        textViewPlayer2.setText("Player 2: " + player2Points);
+    }
+
+    private void resetBoard() {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                buttons[i][j].setText("");
+            }
+        }
+
+        roundCount = 0;
+        player1Turn = true;
     }
 }
