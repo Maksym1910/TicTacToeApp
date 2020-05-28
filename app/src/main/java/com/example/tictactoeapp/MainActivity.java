@@ -20,9 +20,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private int player1Points;
     private int player2Points;
+    private int draws;
 
     private TextView textViewPlayer1;
     private TextView textViewPlayer2;
+    private TextView textViewDraws;
 
     private Button resetGame, resetFields;
 
@@ -35,6 +37,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         textViewPlayer1 = findViewById(R.id.text_view_player1);
         textViewPlayer2 = findViewById(R.id.text_view_player2);
+        textViewDraws = findViewById(R.id.text_view_draws);
         resetFields = findViewById(R.id.button_reset_fields);
         resetGame = findViewById(R.id.button_reset_game);
 
@@ -152,18 +155,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void draw() {
+        draws++;
         Toast.makeText(this, "Draw!", Toast.LENGTH_SHORT).show();
+        updatePointsText();
         resetBoard();
     }
 
     private void updatePointsText() {
         textViewPlayer1.setText("Player 1: " + player1Points);
         textViewPlayer2.setText("Player 2: " + player2Points);
+        textViewDraws.setText("Draws: " + draws);
     }
 
     private void resetGame() {
         textViewPlayer1.setText("Player 1: 0");
         textViewPlayer2.setText("Player 2: 0");
+        textViewDraws.setText("Draws: 0");
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 buttons[i][j].setText("");
