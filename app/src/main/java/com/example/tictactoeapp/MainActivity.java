@@ -3,6 +3,7 @@ package com.example.tictactoeapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -47,6 +48,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 int resID = getResources().getIdentifier(buttonID, "id", getPackageName());
                 buttons[i][j] = findViewById(resID);
                 buttons[i][j].setOnClickListener(this);
+            }
+        }
+
+        if (isLandscape()) {
+            for (int i = 0; i < 3; i++) {
+                for (int j = 0; j < 3; j++) {
+                    buttons[i][j].setTextSize(30);
+                }
             }
         }
 
@@ -219,10 +228,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
 
-        outState.getInt("roundCount", roundCount);
-        outState.getInt("player1Points", player1Points);
-        outState.getInt("player2Points", player2Points);
-        outState.getBoolean("player1Turn", player1Turn);
+        outState.putInt("roundCount", roundCount);
+        outState.putInt("player1Points", player1Points);
+        outState.putInt("player2Points", player2Points);
+        outState.putInt("draws", draws);
+        outState.putBoolean("player1Turn", player1Turn);
     }
 
     @Override
@@ -233,5 +243,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         player1Turn = savedInstanceState.getBoolean("player1Turn");
         player1Points = savedInstanceState.getInt("player1Points");
         player2Points = savedInstanceState.getInt("player2Points");
+        draws = savedInstanceState.getInt("draws");
+    }
+
+    private boolean isLandscape() {
+        return getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
     }
 }
