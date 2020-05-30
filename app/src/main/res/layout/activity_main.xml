@@ -15,55 +15,57 @@
             android:id="@+id/text_view_player1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Player 1: 0"
-            android:textSize="30sp"
+            android:textSize="15sp"
             android:layout_margin="5sp"
-            android:freezesText="true"/>
+            android:freezesText="true"
+            android:text="Player 1: 0" />
 
         <TextView
             android:id="@+id/text_view_player2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/text_view_player1"
-            android:text="Player 2: 0"
-            android:textSize="30sp"
-            android:layout_margin="5sp"
-            android:freezesText="true"/>
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="5sp"
+            android:layout_marginLeft="5sp"
+            android:textSize="15sp"
+            android:freezesText="true"
+            android:text="Player 2: 0" />
 
         <TextView
             android:id="@+id/text_view_draws"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5sp"
-            android:layout_marginLeft="13dp"
-            android:layout_marginEnd="25sp"
-            android:layout_marginRight="5sp"
-            android:layout_toRightOf="@+id/text_view_player1"
-            android:freezesText="true"
-            android:layout_margin="5sp"
-            android:text="Draws: 0"
-            android:textSize="30sp" />
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="7dp"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="31dp"
+            android:text="Draw: 0" />
 
         <Button
             android:id="@+id/button_reset_game"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_marginEnd="11dp"
-            android:layout_marginRight="11dp"
-            android:text="reset game" />
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="18dp"
+            android:layout_marginRight="18dp"
+            android:text="Reset Game" />
 
         <Button
-            android:id="@+id/button_reset_fields"
+            android:id="@+id/button_reset"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/button_reset_game"
+            android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="7dp"
-            android:layout_marginEnd="7dp"
-            android:layout_marginRight="7dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="156dp"
+            android:layout_marginRight="156dp"
             android:text="reset fields" />
 
     </RelativeLayout>
