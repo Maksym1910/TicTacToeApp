@@ -17,14 +17,14 @@ public class ActivityMenu extends AppCompatActivity implements OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
-        buttonStart = findViewById(R.id.button_start);
+        buttonStart = findViewById(R.id.button_single_player);
         buttonStart.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.button_start:
+            case R.id.button_single_player:
                 Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
                 break;

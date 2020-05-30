@@ -81,8 +81,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         if (player1Turn) {
+            ((Button) v).setTextColor(getResources().getColor(R.color.colorX));
             ((Button) v).setText("X");
+
         } else {
+            ((Button) v).setTextColor(getResources().getColor(R.color.colorO));
             ((Button) v).setText("O");
         }
 
@@ -180,11 +183,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         textViewPlayer1.setText("Player 1: 0");
         textViewPlayer2.setText("Player 2: 0");
         textViewDraws.setText("Draws: 0");
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                buttons[i][j].setText("");
-            }
-        }
+        resetField();
     }
 
     private void resetField() {
@@ -193,6 +192,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 buttons[i][j].setText("");
             }
         }
+
+        roundCount = 0;
+        player1Turn = true;
     }
 
     private void resetBoard() {

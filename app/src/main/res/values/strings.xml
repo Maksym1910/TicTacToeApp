@@ -1,3 +1,6 @@
 <resources>
-    <string name="app_name">TicTacToeApp</string>
+    <string name="app_name">TicTacToe</string>
+    <string name="multiplayer">Multiplayer</string>
+    <string name="singleplayer">Singleplayer</string>
+    <string name="settings">Settings</string>
 </resources>
