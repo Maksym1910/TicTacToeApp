@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".DifficultyActivity"
+    android:background="@color/colorAppBackground">
+
+    <TextView
+        android:id="@+id/text_view_names"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:textSize="20sp"
+        android:text="Please choose difficulty"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="sans-serif-thin"
+        android:textColor="@color/BLACK"/>
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:layout_marginLeft="50dp">
+
+        <RadioButton
+            android:id="@+id/radio_btn_easy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:layout_margin="5dp"
+            android:text="Easy"
+            android:fontFamily="sans-serif-thin"
+            android:textColor="@color/BLACK"/>
+
+        <RadioButton
+            android:id="@+id/radio_btn_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="Medium"
+            android:layout_margin="5dp"
+            android:fontFamily="sans-serif-thin"
+            android:textColor="@color/BLACK"/>
+
+        <RadioButton
+            android:id="@+id/radio_btn_ai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:layout_margin="5dp"
+            android:text="Hard (Super Smart AI)"
+            android:fontFamily="sans-serif-thin"
+            android:textColor="@color/BLACK"/>
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/start_game_btn"
+        android:layout_width="181dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:fontFamily="sans-serif-thin"
+        android:text="start game"
+        android:textColor="@color/BLACK"/>
+
+</LinearLayout>
