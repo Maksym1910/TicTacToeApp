@@ -21,11 +21,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private int player1Points;
     private int player2Points;
-    private int draws;
+    private int draw;
 
     private TextView textViewPlayer1;
     private TextView textViewPlayer2;
-    private TextView textViewDraws;
+    private TextView textViewDraw;
 
     private Button resetGame, resetFields;
 
@@ -38,8 +38,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         textViewPlayer1 = findViewById(R.id.text_view_player1);
         textViewPlayer2 = findViewById(R.id.text_view_player2);
-        textViewDraws = findViewById(R.id.text_view_draws);
-        resetFields = findViewById(R.id.button_reset_fields);
+        textViewDraw = findViewById(R.id.text_view_draw);
+        resetFields = findViewById(R.id.button_reset_field);
         resetGame = findViewById(R.id.button_reset_game);
 
         for (int i = 0; i < 3; i++) {
@@ -83,10 +83,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (player1Turn) {
             ((Button) v).setTextColor(getResources().getColor(R.color.colorX));
             ((Button) v).setText("X");
-
+            textViewPlayer1.setTextColor(getResources().getColor(R.color.colorO));
+            textViewPlayer2.setTextColor(getResources().getColor(R.color.colorX));
         } else {
             ((Button) v).setTextColor(getResources().getColor(R.color.colorO));
             ((Button) v).setText("O");
+            textViewPlayer1.setTextColor(getResources().getColor(R.color.colorX));
+            textViewPlayer2.setTextColor(getResources().getColor(R.color.colorO));
         }
 
         roundCount++;
@@ -154,6 +157,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void player1Wins() {
         player1Points++;
+        textViewPlayer1.setTextColor(getResources().getColor(R.color.colorPrimary));
+        textViewPlayer2.setTextColor(getResources().getColor(R.color.colorO));
+        textViewDraw.setTextColor(getResources().getColor(R.color.colorO));
         Toast.makeText(this, "Player 1 won!", Toast.LENGTH_SHORT).show();
         updatePointsText();
         resetBoard();
@@ -161,13 +167,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void player2Wins() {
         player2Points++;
+        textViewPlayer1.setTextColor(getResources().getColor(R.color.colorO));
+        textViewPlayer2.setTextColor(getResources().getColor(R.color.colorPrimary));
+        textViewDraw.setTextColor(getResources().getColor(R.color.colorO));
         Toast.makeText(this, "Player 2 won!", Toast.LENGTH_SHORT).show();
         updatePointsText();
         resetBoard();
     }
 
     private void draw() {
-        draws++;
+        draw++;
+        textViewPlayer1.setTextColor(getResources().getColor(R.color.colorO));
+        textViewPlayer2.setTextColor(getResources().getColor(R.color.colorO));
+        textViewDraw.setTextColor(getResources().getColor(R.color.colorPrimary));
         Toast.makeText(this, "Draw!", Toast.LENGTH_SHORT).show();
         updatePointsText();
         resetBoard();
@@ -176,13 +188,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void updatePointsText() {
         textViewPlayer1.setText("Player 1: " + player1Points);
         textViewPlayer2.setText("Player 2: " + player2Points);
-        textViewDraws.setText("Draws: " + draws);
+        textViewDraw.setText("Draws: " + draw);
     }
 
     private void resetGame() {
         textViewPlayer1.setText("Player 1: 0");
         textViewPlayer2.setText("Player 2: 0");
-        textViewDraws.setText("Draws: 0");
+        textViewDraw.setText("Draws: 0");
         resetField();
     }
 
@@ -219,6 +231,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         buttons[i][j].setEnabled(true);
                     }
                 }
+                textViewPlayer1.setTextColor(getResources().getColor(R.color.colorX));
+                textViewPlayer2.setTextColor(getResources().getColor(R.color.colorO));
+                textViewDraw.setTextColor(getResources().getColor(R.color.colorO));
             }
         }, 2000);
 
@@ -233,7 +248,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         outState.putInt("roundCount", roundCount);
         outState.putInt("player1Points", player1Points);
         outState.putInt("player2Points", player2Points);
-        outState.putInt("draws", draws);
+        outState.putInt("draw", draw);
         outState.putBoolean("player1Turn", player1Turn);
     }
 
@@ -245,7 +260,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         player1Turn = savedInstanceState.getBoolean("player1Turn");
         player1Points = savedInstanceState.getInt("player1Points");
         player2Points = savedInstanceState.getInt("player2Points");
-        draws = savedInstanceState.getInt("draws");
+        draw = savedInstanceState.getInt("draw");
     }
 
     private boolean isLandscape() {

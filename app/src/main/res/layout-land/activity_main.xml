@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:id="@+id/activity_main"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/colorAppBackground">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -17,11 +18,11 @@
             android:layout_height="40dp"
             android:layout_marginLeft="10sp"
             android:layout_marginTop="30dp"
-            android:fontFamily="sans-serif-thin"
-            android:freezesText="true"
             android:text="Player 1: 0"
+            android:fontFamily="sans-serif-thin"
             android:textColor="@color/colorO"
-            android:textSize="28sp" />
+            android:textSize="28sp"
+            android:freezesText="true"/>
 
         <TextView
             android:id="@+id/text_view_player2"
@@ -32,10 +33,10 @@
             android:layout_marginTop="30dp"
             android:layout_marginBottom="5sp"
             android:fontFamily="sans-serif-thin"
-            android:freezesText="true"
             android:text="Player 2: 0"
             android:textColor="@color/colorO"
-            android:textSize="28sp" />
+            android:textSize="28sp"
+            android:freezesText="true"/>
 
         <TextView
             android:id="@+id/text_view_draw"
@@ -47,14 +48,14 @@
             android:layout_marginStart="178dp"
             android:layout_marginLeft="178dp"
             android:layout_marginTop="30dp"
-            android:fontFamily="sans-serif-thin"
-            android:freezesText="true"
             android:text="Draw: 0"
+            android:fontFamily="sans-serif-thin"
             android:textColor="@color/colorO"
-            android:textSize="28sp" />
+            android:textSize="28sp"
+            android:freezesText="true"/>
 
         <Button
-            android:id="@+id/button_reset"
+            android:id="@+id/button_reset_field"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_alignParentTop="true"
@@ -62,11 +63,11 @@
             android:layout_alignParentRight="true"
             android:layout_marginLeft="180dp"
             android:layout_marginTop="30dp"
-            android:layout_marginEnd="137dp"
-            android:layout_marginRight="137dp"
+            android:layout_marginEnd="146dp"
+            android:layout_marginRight="146dp"
             android:fontFamily="sans-serif-thin"
             android:text="Reset Field"
-            android:textColor="@color/colorO" />
+            android:textColor="@color/colorO"/>
 
         <Button
             android:id="@+id/button_reset_game"
@@ -76,8 +77,8 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_marginTop="30dp"
-            android:layout_marginEnd="11dp"
-            android:layout_marginRight="11dp"
+            android:layout_marginEnd="18dp"
+            android:layout_marginRight="18dp"
             android:fontFamily="sans-serif-thin"
             android:text="Reset Game"
             android:textColor="@color/colorO" />
@@ -97,11 +98,11 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="5sp"
-            android:fontFamily="sans-serif-thin"
             android:layout_weight="1"
+            android:fontFamily="sans-serif-thin"
             android:background="@color/WHITE"
             android:freezesText="true"
-            android:textSize="60sp" />
+            android:textSize="60sp"/>
 
         <Button
             android:id="@+id/button_01"
@@ -112,19 +113,19 @@
             android:fontFamily="sans-serif-thin"
             android:background="@color/WHITE"
             android:freezesText="true"
-            android:textSize="60sp"
-            tools:ignore="ButtonStyle" />
+            android:textSize="60sp"/>
 
         <Button
             android:id="@+id/button_02"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="5sp"
-            android:fontFamily="sans-serif-thin"
             android:layout_weight="1"
+            android:fontFamily="sans-serif-thin"
             android:background="@color/WHITE"
             android:freezesText="true"
-            android:textSize="60sp" />
+            android:textSize="60sp"/>
+
     </LinearLayout>
 
     <LinearLayout
@@ -138,34 +139,35 @@
             android:id="@+id/button_10"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_margin="5sp"
             android:layout_weight="1"
             android:fontFamily="sans-serif-thin"
-            android:textSize="60sp"
             android:background="@color/WHITE"
-            android:layout_margin="5sp"
-            android:freezesText="true"/>
+            android:freezesText="true"
+            android:textSize="60sp"/>
 
         <Button
             android:id="@+id/button_11"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_margin="5sp"
             android:layout_weight="1"
-            android:textSize="60sp"
             android:fontFamily="sans-serif-thin"
             android:background="@color/WHITE"
-            android:layout_margin="5sp"
-            android:freezesText="true"/>
+            android:freezesText="true"
+            android:textSize="60sp"/>
 
         <Button
             android:id="@+id/button_12"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_margin="5sp"
             android:layout_weight="1"
             android:fontFamily="sans-serif-thin"
-            android:textSize="60sp"
             android:background="@color/WHITE"
-            android:layout_margin="5sp"
-            android:freezesText="true"/>
+            android:freezesText="true"
+            android:textSize="60sp"/>
+
     </LinearLayout>
 
     <LinearLayout
@@ -179,34 +181,35 @@
             android:id="@+id/button_20"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/WHITE"
-            android:textSize="60sp"
-            android:fontFamily="sans-serif-thin"
             android:layout_margin="5sp"
-            android:freezesText="true"/>
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-thin"
+            android:background="@color/WHITE"
+            android:freezesText="true"
+            android:textSize="60sp"/>
 
         <Button
             android:id="@+id/button_21"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_margin="5sp"
             android:layout_weight="1"
             android:fontFamily="sans-serif-thin"
             android:background="@color/WHITE"
-            android:textSize="60sp"
-            android:layout_margin="5sp"
-            android:freezesText="true"/>
+            android:freezesText="true"
+            android:textSize="60sp"/>
 
         <Button
             android:id="@+id/button_22"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_margin="5sp"
             android:layout_weight="1"
             android:fontFamily="sans-serif-thin"
             android:background="@color/WHITE"
-            android:textSize="60sp"
-            android:layout_margin="5sp"
-            android:freezesText="true"/>
+            android:freezesText="true"
+            android:textSize="60sp"/>
+
     </LinearLayout>
 
 </LinearLayout>
