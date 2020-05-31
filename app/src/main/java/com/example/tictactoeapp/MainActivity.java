@@ -204,7 +204,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 buttons[i][j].setText("");
             }
         }
-
+        textViewPlayer1.setTextColor(getResources().getColor(R.color.colorX));
+        textViewPlayer2.setTextColor(getResources().getColor(R.color.colorO));
+        textViewDraw.setTextColor(getResources().getColor(R.color.colorO));
         roundCount = 0;
         player1Turn = true;
     }
