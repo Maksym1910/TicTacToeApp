@@ -1,9 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AboutActivity">
+    android:orientation="vertical"
+    tools:context=".AboutActivity"
+    android:background="@color/colorAppBackground">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:layout_gravity="center_horizontal"
+        android:text="ABOUT"
+        android:textSize="30sp"
+        android:fontFamily="sans-serif-thin"
+        android:textColor="@color/BLACK" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_marginTop="50dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="This program was developed by the student of KPI Maksym Rozhytskyi as a course work from basics of programing."
+        android:fontFamily="sans-serif-thin"
+        android:textColor="@color/BLACK"
+        android:textSize="15dp"
+        android:layout_gravity="center_horizontal"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="left"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="30dp"
+            android:fontFamily="sans-serif-thin"
+            android:text="Version 1.6.21 (Android)\nCopyright © 2020 Maksym Rozhytskyi Inc. All rights reserved.\nEmail: maksym.rozhytskyi@gmail.com"
+            android:textColor="@color/colorO"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+</LinearLayout>
