@@ -22,7 +22,6 @@ public class NamesActivity extends AppCompatActivity implements View.OnClickList
         player2Name = findViewById(R.id.edit_text_player2_name);
         startGameBtn = findViewById(R.id.start_game_btn);
         startGameBtn.setOnClickListener(this);
-
     }
 
     @Override
@@ -30,8 +29,8 @@ public class NamesActivity extends AppCompatActivity implements View.OnClickList
         switch (v.getId()) {
             case R.id.start_game_btn:
                 Intent intent = new Intent(this, MainActivity.class);
-                intent.putExtra("name1", player1Name.getText().toString());
-                intent.putExtra("name2", player2Name.getText().toString());
+                intent.putExtra("player1Name", player1Name.getText().toString());
+                intent.putExtra("player2Name", player2Name.getText().toString());
                 startActivity(intent);
                 break;
             default:
