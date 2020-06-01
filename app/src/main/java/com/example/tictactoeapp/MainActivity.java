@@ -42,6 +42,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         resetFields = findViewById(R.id.button_reset_field);
         resetGame = findViewById(R.id.button_reset_game);
 
+        textViewPlayer1.setTextColor(getResources().getColor(R.color.colorX));
+
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 String buttonID = "button_" + i + j;

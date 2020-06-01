@@ -22,8 +22,8 @@ public class DifficultyActivity extends AppCompatActivity implements View.OnClic
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.start_game_btn:
-                Intent intent = new Intent(this, SingleActivity.class);
-                startActivity(intent);
+                Intent intent2 = new Intent(this, ActivitySingle.class);
+                startActivity(intent2);
                 break;
             default:
                 break;

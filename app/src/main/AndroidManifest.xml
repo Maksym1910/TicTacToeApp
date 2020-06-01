@@ -9,10 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DifficultyActivity"></activity>
+        <activity android:name=".ActivitySingle"></activity>
+        <activity android:name=".DifficultyActivity" />
         <activity android:name=".AboutActivity" />
         <activity android:name=".SettingsActivity" />
-        <activity android:name=".SingleActivity" />
         <activity android:name=".ActivityMenu">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -11,13 +11,14 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class SingleActivity extends AppCompatActivity implements View.OnClickListener {
+public class ActivitySingle extends AppCompatActivity implements View.OnClickListener{
 
     private Button[][] buttons = new Button[3][3];
     String[][] field = new String[3][3];
     private boolean player1Turn = true;
 
     private int roundCount;
+
 
     private int player1Points;
     private int player2Points;
@@ -26,20 +27,21 @@ public class SingleActivity extends AppCompatActivity implements View.OnClickLis
     private TextView textViewPlayer1;
     private TextView textViewPlayer2;
     private TextView textViewDraw;
-    Button resetGame, resetFields;
+    Button buttonResetField;
+    Button buttonResetGame;
 
     Handler handler = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_single2);
 
         textViewPlayer1 = findViewById(R.id.text_view_player1);
         textViewPlayer2 = findViewById(R.id.text_view_player2);
         textViewDraw = findViewById(R.id.text_view_draw);
-        resetFields = findViewById(R.id.button_reset_field);
-        resetGame = findViewById(R.id.button_reset_game);
+        buttonResetField = findViewById(R.id.button_reset);
+        buttonResetGame = findViewById(R.id.button_reset_game);
 
         textViewPlayer1.setTextColor(getResources().getColor(R.color.colorX));
 
@@ -52,7 +54,8 @@ public class SingleActivity extends AppCompatActivity implements View.OnClickLis
             }
         }
 
-        if (isLandscape()) {
+
+        if(isLandscape()){
             for (int i = 0; i < 3; i++) {
                 for (int j = 0; j < 3; j++) {
                     buttons[i][j].setTextSize(30);
@@ -60,14 +63,14 @@ public class SingleActivity extends AppCompatActivity implements View.OnClickLis
             }
         }
 
-        resetFields.setOnClickListener(new View.OnClickListener() {
+        buttonResetField.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 resetField();
             }
         });
 
-        resetGame.setOnClickListener(new View.OnClickListener() {
+        buttonResetGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 resetGame();
@@ -191,9 +194,11 @@ public class SingleActivity extends AppCompatActivity implements View.OnClickLis
         textViewPlayer1.setTextColor(getResources().getColor(R.color.colorPrimary));
         textViewPlayer2.setTextColor(getResources().getColor(R.color.colorO));
         textViewDraw.setTextColor(getResources().getColor(R.color.colorO));
-        Toast.makeText(this, "Player 1 won!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "You won!", Toast.LENGTH_SHORT).show();
         updatePointsText();
         resetBoard();
+
+
     }
 
     private void player2Wins() {
@@ -201,7 +206,7 @@ public class SingleActivity extends AppCompatActivity implements View.OnClickLis
         textViewPlayer1.setTextColor(getResources().getColor(R.color.colorO));
         textViewPlayer2.setTextColor(getResources().getColor(R.color.colorPrimary));
         textViewDraw.setTextColor(getResources().getColor(R.color.colorO));
-        Toast.makeText(this, "Player 2 won!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Bot won!", Toast.LENGTH_SHORT).show();
         updatePointsText();
         resetBoard();
     }
@@ -217,29 +222,10 @@ public class SingleActivity extends AppCompatActivity implements View.OnClickLis
     }
 
     private void updatePointsText() {
-        textViewPlayer1.setText("Player 1: " + player1Points);
-        textViewPlayer2.setText("Player 2: " + player2Points);
-        textViewDraw.setText("Draws: " + draw);
-    }
+        textViewPlayer1.setText("You: " + player1Points);
+        textViewPlayer2.setText("Bot: " + player2Points);
+        textViewDraw.setText("Draw: " + draw);
 
-    private void resetGame() {
-        textViewPlayer1.setText("Player 1: 0");
-        textViewPlayer2.setText("Player 2: 0");
-        textViewDraw.setText("Draws: 0");
-        resetField();
-    }
-
-    private void resetField() {
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                buttons[i][j].setText("");
-            }
-        }
-        textViewPlayer1.setTextColor(getResources().getColor(R.color.colorX));
-        textViewPlayer2.setTextColor(getResources().getColor(R.color.colorO));
-        textViewDraw.setTextColor(getResources().getColor(R.color.colorO));
-        roundCount = 0;
-        player1Turn = true;
     }
 
     private void resetBoard() {
@@ -248,7 +234,7 @@ public class SingleActivity extends AppCompatActivity implements View.OnClickLis
 
         handler.postDelayed(new Runnable() {
             public void run() {
-                //Delay in 2 sec
+                // действие будет выполнено через 2с
                 for (int i = 0; i < 3; i++) {
                     for (int j = 0; j < 3; j++) {
                         buttons[i][j].setText("");
@@ -261,21 +247,29 @@ public class SingleActivity extends AppCompatActivity implements View.OnClickLis
             }
         }, 2000);
 
+
         roundCount = 0;
         player1Turn = true;
     }
+    private void resetField() {
 
-    private boolean easyBot(){
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                if (field[i][j].equals("")) {
-                    buttons[i][j].setText("O");
-                    buttons[i][j].setTextColor(getResources().getColor(R.color.colorO));
-                    return true;
-                }
+                buttons[i][j].setText("");
             }
         }
-        return false;
+        textViewPlayer1.setTextColor(getResources().getColor(R.color.colorX));
+        textViewPlayer2.setTextColor(getResources().getColor(R.color.colorO));
+        textViewDraw.setTextColor(getResources().getColor(R.color.colorO));
+        roundCount = 0;
+        player1Turn = true;
+    }
+    private void resetGame() {
+        resetField();
+        player1Points = 0;
+        player2Points = 0;
+        draw = 0;
+        updatePointsText();
     }
 
     @Override
@@ -300,8 +294,23 @@ public class SingleActivity extends AppCompatActivity implements View.OnClickLis
         draw = savedInstanceState.getInt("draw");
     }
 
-    private boolean isLandscape() {
+    private boolean isLandscape(){
         return getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
     }
+
+    private boolean easyBot(){
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (field[i][j].equals("")) {
+                    buttons[i][j].setText("O");
+                    buttons[i][j].setTextColor(getResources().getColor(R.color.colorO));
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
 }
+
 
