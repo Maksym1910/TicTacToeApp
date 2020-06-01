@@ -26,8 +26,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView textViewPlayer1;
     private TextView textViewPlayer2;
     private TextView textViewDraw;
+    private String player1Name;
+    private String player2Name;
 
-    private Button resetGame, resetFields;
+    Button resetGame, resetFields;
 
     Handler handler = new Handler();
 
@@ -36,8 +38,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        player1Name = getIntent().getStringExtra("name1");
+        player2Name = getIntent().getStringExtra("name2");
+
         textViewPlayer1 = findViewById(R.id.text_view_player1);
         textViewPlayer2 = findViewById(R.id.text_view_player2);
+        textViewPlayer1.setText(player1Name + ": 0");
+        textViewPlayer2.setText(player2Name + ": 0");
         textViewDraw = findViewById(R.id.text_view_draw);
         resetFields = findViewById(R.id.button_reset_field);
         resetGame = findViewById(R.id.button_reset_game);
@@ -188,14 +195,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void updatePointsText() {
-        textViewPlayer1.setText("Player 1: " + player1Points);
-        textViewPlayer2.setText("Player 2: " + player2Points);
+        textViewPlayer1.setText(player1Name + ": " + player1Points);
+        textViewPlayer2.setText(player2Name + ": " + player2Points);
         textViewDraw.setText("Draws: " + draw);
     }
 
     private void resetGame() {
-        textViewPlayer1.setText("Player 1: 0");
-        textViewPlayer2.setText("Player 2: 0");
+        textViewPlayer1.setText(player1Name + ": 0");
+        textViewPlayer2.setText(player2Name + ": 0");
         textViewDraw.setText("Draws: 0");
         resetField();
     }

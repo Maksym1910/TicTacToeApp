@@ -11,14 +11,13 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class ActivitySingle extends AppCompatActivity implements View.OnClickListener{
+public class ActivitySingle extends AppCompatActivity implements View.OnClickListener {
 
     private Button[][] buttons = new Button[3][3];
     String[][] field = new String[3][3];
     private boolean player1Turn = true;
 
     private int roundCount;
-
 
     private int player1Points;
     private int player2Points;
@@ -54,8 +53,7 @@ public class ActivitySingle extends AppCompatActivity implements View.OnClickLis
             }
         }
 
-
-        if(isLandscape()){
+        if (isLandscape()) {
             for (int i = 0; i < 3; i++) {
                 for (int j = 0; j < 3; j++) {
                     buttons[i][j].setTextSize(30);
@@ -197,8 +195,6 @@ public class ActivitySingle extends AppCompatActivity implements View.OnClickLis
         Toast.makeText(this, "You won!", Toast.LENGTH_SHORT).show();
         updatePointsText();
         resetBoard();
-
-
     }
 
     private void player2Wins() {
@@ -225,7 +221,6 @@ public class ActivitySingle extends AppCompatActivity implements View.OnClickLis
         textViewPlayer1.setText("You: " + player1Points);
         textViewPlayer2.setText("Bot: " + player2Points);
         textViewDraw.setText("Draw: " + draw);
-
     }
 
     private void resetBoard() {
@@ -247,10 +242,10 @@ public class ActivitySingle extends AppCompatActivity implements View.OnClickLis
             }
         }, 2000);
 
-
         roundCount = 0;
         player1Turn = true;
     }
+
     private void resetField() {
 
         for (int i = 0; i < 3; i++) {
@@ -264,12 +259,26 @@ public class ActivitySingle extends AppCompatActivity implements View.OnClickLis
         roundCount = 0;
         player1Turn = true;
     }
+
     private void resetGame() {
         resetField();
         player1Points = 0;
         player2Points = 0;
         draw = 0;
         updatePointsText();
+    }
+
+    private boolean easyBot(){
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (field[i][j].equals("")) {
+                    buttons[i][j].setText("O");
+                    buttons[i][j].setTextColor(getResources().getColor(R.color.colorO));
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     @Override
@@ -294,23 +303,9 @@ public class ActivitySingle extends AppCompatActivity implements View.OnClickLis
         draw = savedInstanceState.getInt("draw");
     }
 
-    private boolean isLandscape(){
+    private boolean isLandscape() {
         return getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
     }
 
-    private boolean easyBot(){
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                if (field[i][j].equals("")) {
-                    buttons[i][j].setText("O");
-                    buttons[i][j].setTextColor(getResources().getColor(R.color.colorO));
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
 }
-
 
