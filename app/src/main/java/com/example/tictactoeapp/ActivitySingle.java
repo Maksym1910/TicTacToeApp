@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Random;
+
 public class ActivitySingle extends AppCompatActivity implements View.OnClickListener {
 
     private Button[][] buttons = new Button[3][3];
@@ -30,6 +32,7 @@ public class ActivitySingle extends AppCompatActivity implements View.OnClickLis
     Button buttonResetGame;
 
     Handler handler = new Handler();
+    Random random = new Random();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +52,7 @@ public class ActivitySingle extends AppCompatActivity implements View.OnClickLis
                 String buttonID = "button_" + i + j;
                 int resID = getResources().getIdentifier(buttonID, "id", getPackageName());
                 buttons[i][j] = findViewById(resID);
+                buttons[i][j].setTextColor(getResources().getColor(R.color.colorO));
                 buttons[i][j].setOnClickListener(this);
             }
         }
@@ -103,7 +107,7 @@ public class ActivitySingle extends AppCompatActivity implements View.OnClickLis
         handler.postDelayed(new Runnable() {
             public void run() {
                 // Delay 0,5 sec
-                easyBot();
+                hardBot();
                 roundCount++;
                 player1Turn = false;
                 textViewPlayer1.setTextColor(getResources().getColor(R.color.colorX));
@@ -268,17 +272,160 @@ public class ActivitySingle extends AppCompatActivity implements View.OnClickLis
         updatePointsText();
     }
 
-    private boolean easyBot(){
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                if (field[i][j].equals("")) {
-                    buttons[i][j].setText("O");
-                    buttons[i][j].setTextColor(getResources().getColor(R.color.colorO));
-                    return true;
-                }
+    private void easyBot() {
+        while (roundCount != 9) {
+            int i = (int) (Math.random() * 3);
+            int j = (int) (Math.random() * 3);
+            if (field[i][j].equals("")) {
+                buttons[i][j].setTextColor(getResources().getColor(R.color.colorO));
+                buttons[i][j].setText("O");
+                return;
             }
         }
-        return false;
+    }
+
+    private void hardBot() {
+
+        //horizontal
+        for (int i = 0; i < 3; i++) {
+            if (field[i][0].equals(field[i][1]) && field[i][2].equals("") && !field[i][0].equals("")) {
+                buttons[i][2].setText("O");
+                return;
+            }
+
+            if (field[i][0].equals(field[i][2]) && field[i][1].equals("") && !field[i][0].equals("")) {
+                buttons[i][1].setText("O");
+                return;
+            }
+
+            if (field[i][1].equals(field[i][2]) && field[i][0].equals("") && !field[i][1].equals("")) {
+                buttons[i][0].setText("O");
+                return;
+            }
+        }
+
+        //vertical
+        for (int i = 0; i < 3; i++) {
+            if (field[0][i].equals(field[1][i]) && field[2][i].equals("") && !field[0][i].equals("")) {
+                buttons[2][i].setText("O");
+                return;
+            }
+
+            if (field[0][i].equals(field[2][i]) && field[1][i].equals("") && !field[0][i].equals("")) {
+                buttons[1][i].setText("O");
+                return;
+            }
+
+            if (field[1][i].equals(field[2][i]) && field[0][i].equals("") && !field[1][i].equals("")) {
+                buttons[0][i].setText("O");
+                return;
+            }
+        }
+
+        //MainDiagonal
+        if (field[0][0].equals(field[1][1]) && field[2][2].equals("") && !field[0][0].equals("")) {
+            buttons[2][2].setText("O");
+            return;
+        }
+
+        if (field[0][0].equals(field[2][2]) && field[1][1].equals("") && !field[0][0].equals("")) {
+            buttons[1][1].setText("O");
+            return;
+        }
+
+        if (field[1][1].equals(field[2][2]) && field[0][0].equals("") && !field[1][1].equals("")) {
+            buttons[0][0].setText("O");
+            return;
+        }
+
+        //SideDiagonal
+        if (field[0][2].equals(field[1][1]) && field[2][0].equals("") && !field[0][2].equals("")) {
+            buttons[2][0].setText("O");
+            return;
+        }
+
+        if (field[0][2].equals(field[2][0]) && field[1][1].equals("") && !field[0][2].equals("")) {
+            buttons[1][1].setText("O");
+            return;
+        }
+
+        if (field[1][1].equals(field[2][0]) && field[0][2].equals("") && !field[1][1].equals("") ) {
+            buttons[0][2].setText("O");
+            return;
+        }
+        easyBot();
+    }
+
+    private void middleBot() {
+
+        //horizontal
+        for (int i = 0; i < 3; i++) {
+            if (field[i][0].equals("O") && field[i][1].equals("O") && field[i][2].equals("")) {
+                buttons[i][2].setText("O");
+                return;
+            }
+
+            if (field[i][0].equals("O") && field[i][2].equals("O") && field[i][1].equals("")) {
+                buttons[i][1].setText("O");
+                return;
+            }
+
+            if (field[i][1].equals("O") && field[i][2].equals("O") && field[i][0].equals("")) {
+                buttons[i][0].setText("O");
+                return;
+            }
+        }
+
+        //vertical
+        for (int i = 0; i < 3; i++) {
+            if (field[0][i].equals("O") && field[1][i].equals("O") && field[2][i].equals("")) {
+                buttons[2][i].setText("O");
+                return;
+            }
+
+            if (field[0][i].equals("O") && field[2][i].equals("O") && field[1][i].equals("")) {
+                buttons[1][i].setText("O");
+                return;
+            }
+
+            if (field[1][i].equals("O") && field[2][i].equals("O") && field[0][i].equals("")) {
+                buttons[0][i].setText("O");
+                return;
+            }
+        }
+
+        //MainDiagonal
+        if (field[0][0].equals("O") && field[1][1].equals("O") && field[2][2].equals("")) {
+            buttons[2][2].setText("O");
+            return;
+        }
+
+        if (field[0][0].equals("O") && field[2][2].equals("O") && field[1][1].equals("")) {
+            buttons[1][1].setText("O");
+            return;
+        }
+
+        if (field[1][1].equals("O") && field[2][2].equals("O") && field[0][0].equals("")) {
+            buttons[0][0].setText("O");
+            return;
+        }
+
+        //SideDiagonal
+        if (field[0][2].equals("O") && field[1][1].equals("O") && field[2][0].equals("")) {
+            buttons[2][0].setText("O");
+            return;
+        }
+
+        if (field[0][2].equals("O") && field[2][0].equals("O") && field[1][1].equals("")) {
+            buttons[1][1].setText("O");
+            return;
+        }
+
+        if (field[1][1].equals("O") && field[2][0].equals("O") && field[0][2].equals("")) {
+            buttons[0][2].setText("O");
+            return;
+        }
+        easyBot();
     }
 
     @Override

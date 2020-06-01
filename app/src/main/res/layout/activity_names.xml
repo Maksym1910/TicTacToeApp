@@ -45,7 +45,7 @@
             android:layout_marginTop="55dp"
             android:fontFamily="sans-serif-thin"
             android:text="Player 1"
-            android:maxLength="20"
+            android:maxLength="10"
             android:textColor="@color/BLACK"
             android:textStyle="italic" />
 
@@ -78,7 +78,7 @@
             android:textColor="@color/BLACK"
             android:text="Player 2"
             android:textStyle="italic"
-            android:maxLength="20"
+            android:maxLength="10"
             android:layout_marginTop="55dp"/>
 
     </LinearLayout>
