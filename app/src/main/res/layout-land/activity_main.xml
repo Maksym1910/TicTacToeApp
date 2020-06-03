@@ -81,8 +81,7 @@
             android:layout_marginRight="18dp"
             android:fontFamily="sans-serif-thin"
             android:text="Reset Game"
-            android:textColor="@color/colorO" />
-
+            android:textColor="@color/colorO"/>
 
     </RelativeLayout>
 

@@ -107,7 +107,6 @@ public class ActivitySingle extends AppCompatActivity implements View.OnClickLis
 
         handler.postDelayed(new Runnable() {
             public void run() {
-                // Delay 0,5 sec
                 if (whichBot == 1) {
                     easyBot();
                 } else if (whichBot == 2) {
@@ -364,7 +363,6 @@ public class ActivitySingle extends AppCompatActivity implements View.OnClickLis
         if (isFromHard) {
             return;
         }
-
         randomBot();
     }
 
@@ -475,6 +473,5 @@ public class ActivitySingle extends AppCompatActivity implements View.OnClickLis
     private boolean isLandscape() {
         return getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
     }
-
 }
 

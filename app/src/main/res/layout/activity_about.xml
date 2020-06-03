@@ -29,8 +29,7 @@
         android:fontFamily="sans-serif-thin"
         android:textColor="@color/BLACK"
         android:textSize="15dp"
-        android:layout_gravity="center_horizontal"
-        />
+        android:layout_gravity="center_horizontal" />
 
     <RelativeLayout
         android:layout_width="match_parent"
