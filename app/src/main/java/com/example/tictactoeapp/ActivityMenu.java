@@ -10,7 +10,7 @@ import android.widget.Button;
 
 public class ActivityMenu extends AppCompatActivity implements OnClickListener {
 
-    Button multiPlayerBtn, singlePlayerBtn, settingsBtn, aboutBtn;
+    Button multiPlayerBtn, singlePlayerBtn, aboutBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,9 +22,6 @@ public class ActivityMenu extends AppCompatActivity implements OnClickListener {
 
         singlePlayerBtn = findViewById(R.id.single_player_btn);
         singlePlayerBtn.setOnClickListener(this);
-
-        settingsBtn = findViewById(R.id.settings_btn);
-        settingsBtn.setOnClickListener(this);
 
         aboutBtn = findViewById(R.id.about_btn);
         aboutBtn.setOnClickListener(this);
@@ -40,10 +37,6 @@ public class ActivityMenu extends AppCompatActivity implements OnClickListener {
             case R.id.single_player_btn:
                 Intent intent2 = new Intent(this, DifficultyActivity.class);
                 startActivity(intent2);
-                break;
-            case R.id.settings_btn:
-                Intent intent3 = new Intent(this, SettingsActivity.class);
-                startActivity(intent3);
                 break;
             case R.id.about_btn:
                 Intent intent4 = new Intent(this, AboutActivity.class);

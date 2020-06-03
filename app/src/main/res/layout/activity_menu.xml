@@ -41,16 +41,6 @@
         android:textColor="@color/BLACK"/>
 
     <Button
-        android:id="@+id/settings_btn"
-        android:layout_width="180dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"
-        android:fontFamily="sans-serif-thin"
-        android:text="@string/settings"
-        android:textColor="@color/BLACK"/>
-
-    <Button
         android:id="@+id/about_btn"
         android:layout_width="180dp"
         android:layout_height="wrap_content"

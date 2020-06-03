@@ -7,7 +7,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".DifficultyActivity"
-    android:background="@color/colorAppBackground">
+    android:background="@color/colorAppBackground"
+    android:id="@+id/back">
+
 
     <TextView
         android:id="@+id/text_view_names"
