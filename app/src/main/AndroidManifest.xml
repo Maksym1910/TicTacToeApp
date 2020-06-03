@@ -9,12 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".NamesActivity"></activity>
+        <activity android:name=".NamesActivity" android:screenOrientation="locked"></activity>
         <activity android:name=".ActivitySingle" />
-        <activity android:name=".DifficultyActivity" />
-        <activity android:name=".AboutActivity" />
-        <activity android:name=".SettingsActivity" />
-        <activity android:name=".ActivityMenu">
+        <activity android:name=".DifficultyActivity" android:screenOrientation="locked"/>
+        <activity android:name=".AboutActivity" android:screenOrientation="locked"/>
+        <activity android:name=".ActivityMenu" android:screenOrientation="locked">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
