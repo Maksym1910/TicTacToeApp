@@ -13,6 +13,10 @@ You can play it solo with a singleplayer mode, in this case your opponent will b
 
 4. When all 9 squares are full, the game is over. If no player has 3 marks in a row, the game ends in a tie.
 
+## Download
+
+For playing my game you need to download [TicTacToe.apk](https://github.com/Maksym1910/TicTacToeApp/blob/master/TicTacToe.apk) (click on download and install it on your android device)
+
 ## License && copyright
 
 ISC © [Rozhytskiy Maksym](https://github.com/Maksym1910)
