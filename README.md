@@ -15,7 +15,7 @@ You can play it solo with a singleplayer mode, in this case your opponent will b
 
 ## Download
 
-For playing my game you need to download [TicTacToe.apk](https://github.com/Maksym1910/TicTacToeApp/blob/master/TicTacToe.apk) (click on download and install it on your android device)
+For playing my game you need to download [TicTacToe.apk](https://github.com/Maksym1910/TicTacToeApp/releases) (click on TicTacToe.apk, download and install it on your android device)
 
 ## License && copyright
 
