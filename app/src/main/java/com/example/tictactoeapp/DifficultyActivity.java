@@ -47,14 +47,10 @@ public class DifficultyActivity extends AppCompatActivity implements View.OnClic
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.start_game_btn:
-                Intent intent = new Intent(this, ActivitySingle.class);
-                intent.putExtra("whichBot", bot);
-                startActivity(intent);
-                break;
-            default:
-                break;
+        if (v.getId() == R.id.start_game_btn) {
+            Intent intent = new Intent(this, ActivitySingle.class);
+            intent.putExtra("whichBot", bot);
+            startActivity(intent);
         }
     }
 }

@@ -25,15 +25,11 @@ public class NamesActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.start_game_btn:
-                Intent intent = new Intent(this, MainActivity.class);
-                intent.putExtra("player1Name", player1Name.getText().toString());
-                intent.putExtra("player2Name", player2Name.getText().toString());
-                startActivity(intent);
-                break;
-            default:
-                break;
+        if (v.getId() == R.id.start_game_btn) {
+            Intent intent = new Intent(this, MainActivity.class);
+            intent.putExtra("player1Name", player1Name.getText().toString());
+            intent.putExtra("player2Name", player2Name.getText().toString());
+            startActivity(intent);
         }
     }
 }

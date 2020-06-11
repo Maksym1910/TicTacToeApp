@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button[][] buttons = new Button[3][3];
+    private final Button[][] buttons = new Button[3][3];
 
     private boolean player1Turn = true;
 
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     Button resetGame, resetFields;
 
-    Handler handler = new Handler();
+    final Handler handler = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

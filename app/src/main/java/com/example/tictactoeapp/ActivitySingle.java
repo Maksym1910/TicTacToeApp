@@ -12,8 +12,8 @@ import android.widget.Toast;
 
 public class ActivitySingle extends AppCompatActivity implements View.OnClickListener {
 
-    private Button[][] buttons = new Button[3][3];
-    String[][] field = new String[3][3];
+    private final Button[][] buttons = new Button[3][3];
+    final String[][] field = new String[3][3];
     private boolean player1Turn = true;
     private boolean isFromHard = false;
     private boolean isEnd;
@@ -31,7 +31,7 @@ public class ActivitySingle extends AppCompatActivity implements View.OnClickLis
     Button buttonResetField;
     Button buttonResetGame;
 
-    Handler handler = new Handler();
+    final Handler handler = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
