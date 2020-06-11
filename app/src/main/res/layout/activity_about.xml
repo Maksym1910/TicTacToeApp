@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="200dp"
         android:layout_gravity="center_horizontal"
-        android:text="ABOUT"
+        android:text="@string/about"
         android:textSize="30sp"
         android:fontFamily="sans-serif-thin"
         android:textColor="@color/BLACK" />
@@ -25,10 +25,10 @@
         android:layout_marginTop="50dp"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="This program was developed by the student of KPI Maksym Rozhytskyi as a course work from basics of programing."
+        android:text="@string/about_description"
         android:fontFamily="sans-serif-thin"
         android:textColor="@color/BLACK"
-        android:textSize="15dp"
+        android:textSize="15sp"
         android:layout_gravity="center_horizontal" />
 
     <RelativeLayout
@@ -40,14 +40,15 @@
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_gravity="left"
-            android:layout_marginLeft="20dp"
+            android:layout_gravity="start"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="30dp"
             android:fontFamily="sans-serif-thin"
-            android:text="Version 1.6.21 (Android)\nCopyright © 2020 Maksym Rozhytskyi Inc. All rights reserved.\nEmail: maksym.rozhytskyi@gmail.com"
+            android:text="@string/about_description_email"
             android:textColor="@color/colorO"
-            android:textSize="12sp" />
+            android:textSize="12sp"
+            android:layout_marginLeft="20dp" />
     </RelativeLayout>
 
 </LinearLayout>

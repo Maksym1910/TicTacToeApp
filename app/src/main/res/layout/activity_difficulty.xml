@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="200dp"
         android:textSize="20sp"
-        android:text="Please choose difficulty"
+        android:text="@string/difficulty"
         android:layout_gravity="center_horizontal"
         android:fontFamily="sans-serif-thin"
         android:textColor="@color/BLACK"/>
@@ -25,6 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="70dp"
+        android:layout_marginStart="50dp"
         android:layout_marginLeft="50dp">
 
         <RadioButton
@@ -33,7 +34,7 @@
             android:layout_height="wrap_content"
             android:checked="true"
             android:layout_margin="5dp"
-            android:text="Easy"
+            android:text="@string/easy"
             android:fontFamily="sans-serif-thin"
             android:textColor="@color/BLACK"/>
 
@@ -42,7 +43,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="false"
-            android:text="Medium"
+            android:text="@string/medium"
             android:layout_margin="5dp"
             android:fontFamily="sans-serif-thin"
             android:textColor="@color/BLACK"/>
@@ -53,7 +54,7 @@
             android:layout_height="wrap_content"
             android:checked="false"
             android:layout_margin="5dp"
-            android:text="Hard (Super Smart AI)"
+            android:text="@string/hard"
             android:fontFamily="sans-serif-thin"
             android:textColor="@color/BLACK"/>
 
@@ -66,7 +67,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="50dp"
         android:fontFamily="sans-serif-thin"
-        android:text="start game"
+        android:text="@string/start_game"
         android:textColor="@color/BLACK"/>
 
 </LinearLayout>

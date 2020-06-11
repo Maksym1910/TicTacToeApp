@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".NamesActivity" android:screenOrientation="locked"></activity>
-        <activity android:name=".ActivitySingle" />
+        <activity android:name=".ActivitySingle" ></activity>
         <activity android:name=".DifficultyActivity" android:screenOrientation="locked"/>
         <activity android:name=".AboutActivity" android:screenOrientation="locked"/>
         <activity android:name=".ActivityMenu" android:screenOrientation="locked">

@@ -16,13 +16,14 @@
             android:id="@+id/text_view_player1"
             android:layout_width="130dp"
             android:layout_height="40dp"
-            android:layout_marginLeft="10sp"
+            android:layout_marginStart="10sp"
             android:layout_marginTop="30dp"
-            android:text="Player 1: 0"
+            android:text="@string/player_1_score"
             android:fontFamily="sans-serif-thin"
             android:textColor="@color/colorO"
             android:textSize="28sp"
-            android:freezesText="true"/>
+            android:freezesText="true"
+            android:layout_marginLeft="10sp" />
 
         <TextView
             android:id="@+id/text_view_player2"
@@ -33,7 +34,7 @@
             android:layout_marginTop="30dp"
             android:layout_marginBottom="5sp"
             android:fontFamily="sans-serif-thin"
-            android:text="Player 2: 0"
+            android:text="@string/player_2_score"
             android:textColor="@color/colorO"
             android:textSize="28sp"
             android:freezesText="true"/>
@@ -48,7 +49,7 @@
             android:layout_marginStart="178dp"
             android:layout_marginLeft="178dp"
             android:layout_marginTop="30dp"
-            android:text="Draw: 0"
+            android:text="@string/draw_score"
             android:fontFamily="sans-serif-thin"
             android:textColor="@color/colorO"
             android:textSize="28sp"
@@ -61,13 +62,14 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_marginLeft="180dp"
+            android:layout_marginStart="180dp"
             android:layout_marginTop="30dp"
             android:layout_marginEnd="146dp"
             android:layout_marginRight="146dp"
             android:fontFamily="sans-serif-thin"
-            android:text="Reset Field"
-            android:textColor="@color/colorO"/>
+            android:text="@string/reset_field"
+            android:textColor="@color/colorO"
+            android:layout_marginLeft="180dp" />
 
         <Button
             android:id="@+id/button_reset_game"
@@ -80,7 +82,7 @@
             android:layout_marginEnd="18dp"
             android:layout_marginRight="18dp"
             android:fontFamily="sans-serif-thin"
-            android:text="Reset Game"
+            android:text="@string/reset_game"
             android:textColor="@color/colorO"/>
 
     </RelativeLayout>

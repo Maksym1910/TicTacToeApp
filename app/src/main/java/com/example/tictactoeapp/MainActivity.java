@@ -2,7 +2,6 @@ package com.example.tictactoeapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.Handler;
@@ -11,14 +10,13 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button[][] buttons = new Button[3][3];
 
     private boolean player1Turn = true;
 
     private int roundCount;
-
     private int player1Points;
     private int player2Points;
     private int draw;
@@ -169,7 +167,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         textViewPlayer1.setTextColor(getResources().getColor(R.color.colorPrimary));
         textViewPlayer2.setTextColor(getResources().getColor(R.color.colorO));
         textViewDraw.setTextColor(getResources().getColor(R.color.colorO));
-        Toast.makeText(this,player1Name + " won!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, player1Name + " won!", Toast.LENGTH_SHORT).show();
         updatePointsText();
         resetBoard();
     }
@@ -179,7 +177,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         textViewPlayer1.setTextColor(getResources().getColor(R.color.colorO));
         textViewPlayer2.setTextColor(getResources().getColor(R.color.colorPrimary));
         textViewDraw.setTextColor(getResources().getColor(R.color.colorO));
-        Toast.makeText(this,player2Name + " won!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, player2Name + " won!", Toast.LENGTH_SHORT).show();
         updatePointsText();
         resetBoard();
     }

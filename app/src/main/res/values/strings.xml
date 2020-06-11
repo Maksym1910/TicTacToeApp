@@ -4,5 +4,22 @@
     <string name="settings">settings</string>
     <string name="single_player">SinglePlayer</string>
     <string name="tic_tac_toe">Tic Tac Toe</string>
-    <string name="about">about</string>
+    <string name="about">ABOUT</string>
+    <string name="enter_your_name">Enter your name</string>
+    <string name="player_1">Player 1</string>
+    <string name="player_2">Player 2</string>
+    <string name="start_game">start game</string>
+    <string name="about_description">This program was developed by the student of KPI Maksym Rozhytskyi as a course work from basics of programing.</string>
+    <string name="about_description_email">Version 1.6.21 (Android)\nCopyright © 2020 Maksym Rozhytskyi Inc. All rights reserved.\nEmail: maksym.rozhytskyi@gmail.com</string>
+    <string name="difficulty">Please choose difficulty</string>
+    <string name="easy">Easy</string>
+    <string name="medium">Medium</string>
+    <string name="hard">Hard (Super Smart AI)</string>
+    <string name="player_1_score">Player 1: 0</string>
+    <string name="player_2_score">Player 2: 0</string>
+    <string name="draw_score">Draw: 0</string>
+    <string name="reset_field">Reset Field</string>
+    <string name="reset_game">Reset Game</string>
+    <string name="you_score">You: 0</string>
+    <string name="bot_score">Bot: 0</string>
 </resources>

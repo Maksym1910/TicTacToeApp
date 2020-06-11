@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="200dp"
         android:textSize="20sp"
-        android:text="Please enter your names: "
+        android:text="@string/enter_your_name"
         android:layout_gravity="center_horizontal"
         android:fontFamily="sans-serif-thin"
         android:textColor="@color/BLACK"/>
@@ -30,7 +30,7 @@
             android:layout_marginLeft="70dp"
             android:layout_marginTop="50dp"
             android:layout_marginBottom="20dp"
-            android:text="Player 1: "
+            android:text="@string/player_1"
             android:textSize="20sp"
             android:fontFamily="sans-serif-thin"
             android:textColor="@color/BLACK"/>
@@ -43,10 +43,11 @@
             android:layout_marginLeft="60dp"
             android:layout_marginTop="55dp"
             android:fontFamily="sans-serif-thin"
-            android:text="Player 1"
+            android:text="@string/player_1"
             android:maxLength="10"
             android:textColor="@color/BLACK"
-            android:textStyle="italic" />
+            android:textStyle="italic"
+            android:hint="@string/enter_your_name"/>
 
     </LinearLayout>
 
@@ -62,7 +63,7 @@
             android:layout_marginLeft="70dp"
             android:layout_marginTop="50dp"
             android:layout_marginBottom="20dp"
-            android:text="Player 2: "
+            android:text="@string/player_2"
             android:textSize="20sp"
             android:fontFamily="sans-serif-thin"
             android:textColor="@color/BLACK"/>
@@ -75,10 +76,11 @@
             android:layout_marginLeft="60dp"
             android:fontFamily="sans-serif-thin"
             android:textColor="@color/BLACK"
-            android:text="Player 2"
+            android:text="@string/player_2"
             android:textStyle="italic"
             android:maxLength="10"
-            android:layout_marginTop="55dp"/>
+            android:layout_marginTop="55dp"
+            android:hint="@string/enter_your_name"/>
 
     </LinearLayout>
 
@@ -89,7 +91,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="40dp"
         android:fontFamily="sans-serif-thin"
-        android:text="start game"
+        android:text="@string/start_game"
         android:textColor="@color/BLACK"/>
 
 </LinearLayout>
